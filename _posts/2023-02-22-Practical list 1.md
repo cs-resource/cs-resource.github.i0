@@ -43,7 +43,44 @@ Enter The Marks for 10 Student :: 25
 Average of all 10 Students marks is :: 37.00
 ```
 ## Q2 Write a C program to declare, initialize, input elements in array and print array. How to input and display elements in an array using for loop in C programming. C program to input and print array elements using loop.
+### Code
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100
 
+void main()
+{
+    int arr[MAX_SIZE]; 
+    int i, n;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements in the array : \n", n);
+    for(i=1; i<=n; i++)
+    {
+        printf("Element %d = ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("\nElements in array are: ");
+    for(i=1; i<=n; i++)
+    {
+        printf("%d, ", arr[i]);
+    }
+}
+```
+
+### Output
+```
+Element 1 = 2
+Element 2 = 4
+Element 3 = 6
+Element 4 = 46
+Element 5 = 4
+
+Elements in array are: 2, 4, 6, 46, 4,
+```
 ## Q3 Write a C program to input elements in array and print all negative elements. How to display all negative elements in array using loop in C program. 
 
 ## Q4 Write a C program to input elements in array and copy all elements of first array into second array.
