@@ -240,8 +240,152 @@ Array elements after insertion : 1, 2, 4, 3,
 
 ## Q6 Write a C program to delete element from array at specified position. How to remove element from array at given position in C programming.
 
+### Code
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr[MAX_SIZE];
+    int i, size, pos;
+
+    printf("Enter size of the array : ");
+    scanf("%d", &size);
+    printf("Enter elements in array : ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the element position to delete : ");
+    scanf("%d", &pos);
+
+
+    if(pos < 0 || pos > size)
+    {
+        printf("Invalid position! Please enter position between 1 to %d", size);
+    }
+    else
+    {
+        for(i=pos-1; i<size-1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+
+        size--;
+
+        printf("\nElements of array after delete are : ");
+        for(i=0; i<size; i++)
+        {
+            printf("%d, ", arr[i]);
+        }
+    }
+}
+```
+
+### Output
+
+```
+Enter size of the array : 5
+Enter elements in array : 1 2 3 4 6
+Enter the element position to delete : 5
+
+Elements of array after delete are : 1, 2, 3, 4
+```
+
 ## Q7 Write a C program to input elements in two array and merge two array to third array.
 
+### Code 
+
+```
+#include <stdio.h>
+#define MAX_SIZE 100      
+
+void main()
+{
+    int arr1[MAX_SIZE], arr2[MAX_SIZE], mergeArray[MAX_SIZE * 2];
+    int size1, size2, mergeSize;
+    int index1, index2, mergeIndex;
+    int i;
+     
+    printf("Enter the size of first array : ");
+    scanf("%d", &size1);
+
+    printf("Enter elements in first array : ");
+    for(i=0; i<size1; i++)
+    {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("\nEnter the size of second array : ");
+    scanf("%d", &size2);
+
+    printf("Enter elements in second array : ");
+    for(i=0; i<size2; i++)
+    {
+        scanf("%d", &arr2[i]);
+    }
+
+
+    mergeSize = size1 + size2;
+
+    index1 = 0;
+    index2 = 0;
+    for(mergeIndex=0; mergeIndex < mergeSize; mergeIndex++)
+    {
+        if(index1 >= size1 || index2 >= size2)
+        {
+            break;
+        }
+
+
+        if(arr1[index1] < arr2[index2])
+        {
+            mergeArray[mergeIndex] = arr1[index1];
+            index1++;
+        }
+        else
+        {
+            mergeArray[mergeIndex] = arr2[index2];
+            index2++;
+        }
+    }
+
+    while(index1 < size1)
+    {
+        mergeArray[mergeIndex] = arr1[index1];
+        mergeIndex++;
+        index1++;
+    }
+    while(index2 < size2)
+    {
+        mergeArray[mergeIndex] = arr2[index2];
+        mergeIndex++;
+        index2++;
+    }
+
+
+    
+    printf("\nArray merged in ascending order : ");
+    for(i=0; i<mergeSize; i++)
+    {
+        printf("%d, ", mergeArray[i]);
+    }
+}
+```
+
+### Output
+
+```
+Enter the size of first array : 5
+Enter elements in first array : 1 2 3 4 5
+
+Enter the size of second array : 5
+Enter elements in second array : 6 7 8 9 10
+
+Array merged in ascending order : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+```
 ## Q8 Write a C program to input elements in array and find reverse of array.
 
 ## Q9 Write a C program to input elements in array and search whether an element exists in array or not.
