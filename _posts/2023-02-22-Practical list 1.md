@@ -127,6 +127,58 @@ All negative elements in array are : -3 -5
 
 ## Q4 Write a C program to input elements in array and copy all elements of first array into second array.
 
+### Code
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100
+
+void main()
+{
+    int original[MAX_SIZE], copy[MAX_SIZE];
+    int i, size;
+
+    printf("Enter the size of the array : ");
+    scanf("%d", &size);
+    
+    printf("Enter elements of Original array : \n");
+    for(i=1; i<=size; i++)
+    {
+        printf("Enter %d elements in the array :: ", i);
+        scanf("%d", &original[i]);
+    }
+
+    for(i=1; i<=size; i++)
+    {
+        copy[i] = original[i];
+    }
+
+    printf("\nElements of Original array are : ");
+    for(i=1; i<=size; i++)
+    {
+        printf("%d, ", original[i]);
+    }
+
+    printf("\nElements of Copy array are : ");
+    for(i=1; i<=size; i++)
+    {
+        printf("%d, ", copy[i]);
+    }
+}
+```
+
+### Output
+
+``` 
+Enter the size of the array : 3
+Enter elements of Original array :
+Enter 1 elements in the array :: 3
+Enter 2 elements in the array :: 4
+Enter 3 elements in the array :: 4
+
+Elements of Original array are : 3, 4, 4,
+Elements of Copy array are : 3, 4, 4,
+```
+
 ## Q5 Write a C program to insert element in array at specified position. C program to insert element in array at given position.
 
 ## Q6 Write a C program to delete element from array at specified position. How to remove element from array at given position in C programming.
