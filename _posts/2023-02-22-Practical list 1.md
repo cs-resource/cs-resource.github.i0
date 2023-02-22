@@ -83,6 +83,48 @@ Elements in array are: 2, 4, 6, 46, 4,
 ```
 ## Q3 Write a C program to input elements in array and print all negative elements. How to display all negative elements in array using loop in C program. 
 
+### Code
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100 
+
+void main()
+{
+    int arr[MAX_SIZE]; 
+    int i, n;
+
+    printf("Enter size of the array : ");
+    scanf("%d", &n);
+    
+    for(i=1; i<=n; i++)
+    {
+        printf("Enter %d elements in the array :: ", n);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nAll negative elements in array are : ");
+    for(i=1; i<=n; i++)
+    {
+        if(arr[i] < 0)
+        {
+            printf("%d\t", arr[i]);
+        }
+    }
+}
+```
+
+### Output
+
+```
+Enter size of the array : 4
+Enter 4 elements in the array :: -3
+Enter 4 elements in the array :: -5
+Enter 4 elements in the array :: 3
+Enter 4 elements in the array :: 3
+
+All negative elements in array are : -3 -5
+```
+
 ## Q4 Write a C program to input elements in array and copy all elements of first array into second array.
 
 ## Q5 Write a C program to insert element in array at specified position. C program to insert element in array at given position.
