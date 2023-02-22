@@ -298,7 +298,7 @@ Elements of array after delete are : 1, 2, 3, 4
 
 ### Code 
 
-```
+``` c
 #include <stdio.h>
 #define MAX_SIZE 100      
 
@@ -430,7 +430,7 @@ Array in reverse order: 5, 4, 3, 2, 1,
 
 ### Code
 
-```
+``` c
 #include <stdio.h>
 
 #define MAX_SIZE 100  
