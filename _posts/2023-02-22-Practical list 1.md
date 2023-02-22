@@ -755,7 +755,7 @@ Matrix A is equal to Matrix B
 ## Q14 Write a C program to read elements in a matrix and find transpose of the given matrix.
 
 ### Code
-```
+``` c
 #include <stdio.h>
 #define MAX_ROWS 3
 #define MAX_COLS 3
