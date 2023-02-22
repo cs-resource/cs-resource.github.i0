@@ -181,6 +181,63 @@ Elements of Copy array are : 3, 4, 4,
 
 ## Q5 Write a C program to insert element in array at specified position. C program to insert element in array at given position.
 
+### Code
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100
+
+void main()
+{
+    int arr[MAX_SIZE];
+    int i, size, n, pos;
+
+    printf("Enter size of the array : ");
+    scanf("%d", &size);
+
+    printf("Enter elements in array : ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to insert : ");
+    scanf("%d", &n);
+    printf("Enter the element position : ");
+    scanf("%d", &pos);
+
+    if(pos > size+1 || pos <= 0)
+    {
+        printf("Invalid position! Please enter position between 1 to %d", size);
+    }
+    else
+    {
+        for(i=size; i>=pos; i--)
+        {
+            arr[i] = arr[i-1];
+        }
+        
+        arr[pos-1] = n;
+        size++; 
+
+        printf("Array elements after insertion : ");
+        for(i=0; i<size; i++)
+        {
+            printf("%d, ", arr[i]);
+        }
+    }
+}
+```
+
+### Output
+
+```
+Enter size of the array : 3
+Enter elements in array : 1 2 3
+Enter element to insert : 4
+Enter the element position : 3
+Array elements after insertion : 1, 2, 4, 3,
+```
+
 ## Q6 Write a C program to delete element from array at specified position. How to remove element from array at given position in C programming.
 
 ## Q7 Write a C program to input elements in two array and merge two array to third array.
