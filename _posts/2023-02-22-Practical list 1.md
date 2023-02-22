@@ -428,14 +428,418 @@ Array in reverse order: 5, 4, 3, 2, 1,
 ```
 ## Q9 Write a C program to input elements in array and search whether an element exists in array or not.
 
+### Code
+
+```
+#include <stdio.h>
+
+#define MAX_SIZE 100  
+
+void main()
+{
+    int arr[MAX_SIZE];
+    int size, i, toSearch, found;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("Enter elements in array: ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nEnter element to search: ");
+    scanf("%d", &toSearch);
+
+    found = 0; 
+    
+    for(i=0; i<size; i++)
+    {
+        if(arr[i] == toSearch)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 1)
+    {
+        printf("\n%d is found at position %d", toSearch, i + 1);
+    }
+    else
+    {
+        printf("\n%d is not found in the array", toSearch);
+    }
+}
+```
+
+### Output
+
+```
+Enter size of array: 5
+Enter elements in array: 1 2 3 4 5
+
+Enter element to search: 3
+
+3 is found at position 3
+```
 ## Q10 Write a C program to input elements in array and sort array elements in ascending or descending order.
+
+### Code
+
+``` c
+#include <stdio.h>
+#define MAX_SIZE 100    
+
+void main()
+{
+    int arr[MAX_SIZE];
+    int size;
+    int i, j, temp;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+
+    printf("Enter elements in array: ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    for(i=0; i<size; i++)
+    {
+        for(j=i+1; j<size; j++)
+        {
+            if(arr[i] > arr[j])
+            {
+                temp     = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    printf("\nElements of array in ascending order: ");
+    for(i=0; i<size; i++)
+    {
+        printf("%d, ", arr[i]);
+    }
+}
+```
+
+### Output
+
+```
+Enter size of array: 5
+Enter elements in array: 5 4 3 2 1
+
+Elements of array in ascending order: 1, 2, 3, 4, 5,
+```
 
 ## Q11 Write a C program to read elements in two matrices and add elements of both matrices.
 
+### Code
+``` c
+#include <stdio.h>
+#define SIZE 3 
+
+void main()
+{
+    int A[SIZE][SIZE]; 
+    int B[SIZE][SIZE]; 
+    int C[SIZE][SIZE]; 
+
+    int row, col;
+
+    printf("Enter elements in matrix A of size 3x3: \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+    printf("\nEnter elements in matrix B of size 3x3: \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &B[row][col]);
+        }
+    }
+
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            C[row][col] = A[row][col] + B[row][col];
+        }
+    }
+    printf("\nSum of matrices A+B = \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            printf("%d ", C[row][col]);
+        }
+        printf("\n");
+    }
+}
+```
+
+### Output
+``` 
+Enter elements in matrix A of size 3x3:
+1 2 3
+4 5 6
+7 8 9
+
+Enter elements in matrix B of size 3x3:
+9 8 7
+6 5 4
+3 2 1
+
+Sum of matrices A+B =
+10 10 10
+10 10 10
+10 10 10
+```
+
 ## Q12 Write a C program to read elements in two matrices and find the difference of two matrices.
+
+### Code
+``` c
+#include <stdio.h>
+
+#define SIZE 3
+
+int main()
+{
+    int A[SIZE][SIZE];  
+    int B[SIZE][SIZE];  
+    int C[SIZE][SIZE];  
+
+    int row, col;
+
+    printf("Enter elements in matrix A of size 3x3: \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+
+    printf("\nEnter elements in matrix B of size 3x3: \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &B[row][col]);
+        }
+    }
+
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            C[row][col] = A[row][col] - B[row][col];
+        }
+    }
+
+    printf("\nDifference of two matrices A-B = \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            printf("%d ", C[row][col]);
+        }
+        printf("\n");
+    }
+}
+```
+
+### Output
+
+```
+Input elements in 3x3 matrix1:
+1 2 3
+4 5 6
+7 8 9
+
+Input elements in 3x3 matrix2:
+9 8 7
+6 5 4
+3 2 1
+
+Difference of two matrices A-B =
+-8 -6 -4
+-2 0 2
+4 6 8
+```
 
 ## Q13 Write a C program to enter elements in two matrices and check whether both matrices are equal or not.
 
+### Code
+``` c
+#include <stdio.h>
+#define SIZE 3
+
+void main()
+{
+    int A[SIZE][SIZE]; 
+    int B[SIZE][SIZE];
+
+    int row, col, isEqual;
+
+    printf("Enter elements in matrix A of size %dx%d: \n", SIZE, SIZE);
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+
+    printf("\nEnter elements in matrix B of size %dx%d: \n");
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            scanf("%d", &B[row][col]);
+        }
+    }
+
+    isEqual = 1;
+
+    for(row=0; row<SIZE; row++)
+    {
+        for(col=0; col<SIZE; col++)
+        {
+            if(A[row][col] != B[row][col])
+            {
+                isEqual = 0;
+                break;
+            }
+        }
+    }
+
+    if(isEqual == 1)
+    {
+        printf("\nMatrix A is equal to Matrix B");
+    }
+    else
+    {
+        printf("\nMatrix A is not equal to Matrix B");
+    }
+}
+```
+
+### Output
+
+```
+Enter elements in matrix A of size 3x3:
+1 2 3
+4 5 6
+7 8 9
+
+Enter elements in matrix B of size 6422288x3:
+1 2 3
+4 5 6
+7 8 9
+
+Matrix A is equal to Matrix B
+```
+
 ## Q14 Write a C program to read elements in a matrix and find transpose of the given matrix.
 
+### Code
+```
+#include <stdio.h>
+#define MAX_ROWS 3
+#define MAX_COLS 3
+
+int main()
+{
+    int A[MAX_ROWS][MAX_COLS];  
+    int B[MAX_COLS][MAX_ROWS];  
+
+    int row, col;
+
+    printf("Enter elements in matrix of size %dx%d: \n", MAX_ROWS, MAX_COLS);
+    for(row=0; row<MAX_ROWS; row++)
+    {
+        for(col=0; col<MAX_COLS; col++)
+        {
+            scanf("%d", &A[row][col]);
+        }
+    }
+
+    for(row=0; row<MAX_ROWS; row++)
+    {
+        for(col=0; col<MAX_COLS; col++)
+        {
+            B[col][row] = A[row][col];
+        }
+    }
+    printf("\nOriginal matrix: \n");
+    for(row=0; row<MAX_ROWS; row++)
+    {
+        for(col=0; col<MAX_COLS; col++)
+        {
+            printf("%d ", A[row][col]);
+        }
+
+        printf("\n");
+    }
+    
+    printf("Transpose of matrix A: \n");
+    for(row=0; row<MAX_COLS; row++)
+    {
+        for(col=0; col<MAX_ROWS; col++)
+        {
+            printf("%d ", B[row][col]);
+        }
+
+        printf("\n");
+    }
+}
+```
+
+### Output
+```
+Enter elements in matrix of size 3x3:
+1 2 3
+4 5 6
+7 8 9
+
+Original matrix:
+1 2 3
+4 5 6
+7 8 9
+Transpose of matrix A:
+1 4 7
+2 5 8
+3 6 9
+```
 ## Q15 Write a C program to find length of a string using loop. How to find length of a string without using in-built library function strlen() in C programming.
+
+### Code
+``` c
+#include <stdio.h>
+int main() {
+    char s[] = "CS Resource";
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    printf("Length of the string: %d", i);
+    return 0;
+}
+```
+### Output
+
+```
+Length of the string: 11
+```
