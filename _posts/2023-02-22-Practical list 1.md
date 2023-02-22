@@ -388,6 +388,17 @@ Array merged in ascending order : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 ```
 ## Q8 Write a C program to input elements in array and find reverse of array.
 
+### Code
+
+```
+
+```
+
+### Output
+
+```
+
+```
 ## Q9 Write a C program to input elements in array and search whether an element exists in array or not.
 
 ## Q10 Write a C program to input elements in array and sort array elements in ascending or descending order.
