@@ -1,5 +1,5 @@
 ---
-title: Practical list - 1
+title: Practical list - 1 | ACP
 date: 2023-02-22 00:00:00 
 categories: [Advance Computer Programming ]
 tags: [practical list - 1,practical list]     # TAG names should always be lowercase
