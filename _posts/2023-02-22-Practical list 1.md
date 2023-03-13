@@ -1,8 +1,8 @@
 ---
-title: Advance Computer Programming Practical list - 1
+title: Practical list - 1
 date: 2023-02-22 00:00:00 
 categories: [Advance Computer Programming ]
-tags: [practical list - 1]     # TAG names should always be lowercase
+tags: [practical list - 1,practical list]     # TAG names should always be lowercase
 ---
 
 ## Q1 Write a C program to declare an array capable of storing 10 student marks. Input marks of all 10 students and find their average.

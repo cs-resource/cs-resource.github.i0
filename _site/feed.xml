@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>CS Resource</title>
   <subtitle>CS Resource will give resource for free! </subtitle>
-  <updated>2023-02-22T22:29:35+05:30</updated>
+  <updated>2023-03-13T17:25:55+05:30</updated>
   <author>
     <name>Bhavya Kachhadiya</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,51 @@
 
   
   <entry>
-    <title>Advance Computer Programming Practical list - 1</title>
-    <link href="http://localhost:4000/posts/Practical-list-1/" rel="alternate" type="text/html" title="Advance Computer Programming Practical list - 1" />
+    <title>Question Bank-1</title>
+    <link href="http://localhost:4000/posts/Question-Bank-1/" rel="alternate" type="text/html" title="Question Bank-1" />
+    <published>2023-03-13T05:30:00+05:30</published>
+  
+    <updated>2023-03-13T05:30:00+05:30</updated>
+  
+    <id>http://localhost:4000/posts/Question-Bank-1/</id>
+    <content src="http://localhost:4000/posts/Question-Bank-1/" />
+    <author>
+      <name>Bhavya Kachhadiya</name>
+    </author>
+
+  
+    
+    <category term="Advance Computer Programming" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Q1 What is an array? What are the advantages of using an array? Write characteristic of an Array.
+
+Array is useful concept for representing a group of similar values under a single
+name. Thus, array can be defined simply as a group of values of same type.
+
+Advantages of an Array:
+1 Create arrays with small items: It’s best to learn about arrays using small physical items to model the dimensions...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Practical list - 1</title>
+    <link href="http://localhost:4000/posts/Practical-list-1/" rel="alternate" type="text/html" title="Practical list - 1" />
     <published>2023-02-22T05:30:00+05:30</published>
   
-    <updated>2023-02-22T22:28:38+05:30</updated>
+    <updated>2023-02-22T22:29:53+05:30</updated>
   
     <id>http://localhost:4000/posts/Practical-list-1/</id>
     <content src="http://localhost:4000/posts/Practical-list-1/" />
